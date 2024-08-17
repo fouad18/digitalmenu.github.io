@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Menu</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Container for the entire screen */
+        .container {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        /* Video Section (Left Half) */
+        .video-section {
+            flex: 1;
+            position: relative;
+        }
+
+        .video-section video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Menu Section (Right Half) */
+        .menu-section {
+            flex: 1;
+            background-image: url('image.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 30px;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        /* Adding a semi-transparent overlay to fade the background */
+        .menu-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8); /* Adjust the opacity as needed */
+            z-index: 1;
+        }
+
+        /* Ensuring content is above the overlay */
+        .menu-section * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu-section h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .menu-section h2 {
+            font-size: 24px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .menu-category {
+            margin-bottom: 40px;
+        }
+
+        .menu-category h3 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+        }
+
+        .menu-item {
+            margin-bottom: 15px;
+        }
+
+        .item-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .item-description {
+            font-size: 14px;
+            color: #777;
+        }
+
+        .item-price {
+            font-size: 16px;
+            color: #333;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Half: Video Section -->
+        <div class="video-section">
+            <video autoplay loop muted>
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Right Half: Menu Section -->
+        <div class="menu-section">
+            <h1>Dunoon's Premier Food Venue</h1>
+                   
+            <div class="menu-category">
+                <h3>Starter</h3>
+                <div class="menu-item">
+                    <p class="item-name">Vegetable Pakora (salad + sauce)</p>              
+                    <p class="item-price">4.90</p>
+                </div>
+                <div class="menu-item">
+                    <p class="item-name">Chicken Breast Pakora (salad + sauce)</p>
+                    <p class="item-price">6.50</p>
+                </div>
+                <div class="menu-item">
+                    <p class="item-name">Garlic Bread | Cheese</p>
+                    <p class="item-price">2.90 | 3.60</p>
+                </div>
+                <div class="menu-item">
+                    <p class="item-name">Vegetable Samosas (sauce)</p>
+                    <p class="item-price">1.70</p>
+                </div>
+            </div>
+            
+            <!-- Add more categories and items as needed -->
+        </div>
+    </div>
+</body>
+</html>
